@@ -19,10 +19,6 @@
 //   },
 // });
 
-
-
-
-
 // import React from 'react';
 // import { View, Text, StyleSheet, Dimensions } from 'react-native';
 // import { Carousel } from 'react-native-snap-carousel'; // ✅ CORRECT
@@ -80,17 +76,79 @@
 //   },
 // });
 
+import React from "react";
+import { View, Text, StyleSheet, Dimensions, Button, Pressable } from "react-native";
+import Carousel from "react-native-reanimated-carousel";
 
+const { width } = Dimensions.get("window");
 
+const data = [
+  {
+    title: "One Platform, Endless Possibilities for Your Business",
+    subtitle:
+      "From HRM, Finance, and CRM to Projects, Tickets, Orders, and Reports—streamline operations, boost collaboration, and stay in control with our all-in-one ERP.",
+  },
+  {
+    title: "Manage Employee Profiles & Streamline Leave Management",
+    subtitle: `✅ Maintain comprehensive employee records including personal details, designations, departments, and documents.
 
+✅ Centralized access for HR to manage and update employee data securely.
 
-import React from 'react';
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
-import Carousel from 'react-native-reanimated-carousel';
+✅ Employees can apply for leaves with a simple workflow.
 
-const { width } = Dimensions.get('window');
+✅ Managers receive notifications and can approve / reject requests.
 
-const data = ['Slide 1', 'Slide 2', 'Slide 3'];
+✅ Auto - tracking of leave balances and history.`,
+  },
+  {
+    title: "Visual CRM with Lead & Client Portfolio",
+    subtitle: `✅ Kanban-style lead tracking from prospect to conversion.
+
+✅ Manage client portfolios with associated projects, contracts, and invoices.
+
+✅ Gain visibility into client lifecycle and engagement history.`,
+  },
+  {
+    title: "Project & Task Management Simplified",
+    subtitle: `✅ Create projects, break them into tasks, and assign them to team members.
+
+✅ Monitor task progress, deadlines, and priority levels
+
+✅ Enable team collaboration with comments and status updates.`,
+  },
+  {
+    title: "Timesheet & Timelog Tracking",
+    subtitle: `✅ Log working hours against tasks and projects.
+
+✅ Track billable vs non-billable time.
+
+✅ Generate accurate timesheets for payroll or invoicing.`,
+  },
+  {
+    title: "Internal Messaging For Collaboration",
+    subtitle: `✅ Team members can communicate instantly within the platform.
+
+✅ Supports one-to-one or group conversations.
+
+✅ Reduces reliance on external chat tools and improves coordination`,
+  },
+  {
+    title: "Efficient Support Ticket Handling",
+    subtitle: `✅ Create and assign tickets for internal or customer issues.
+
+✅ Set priorities, track status, and resolve with full history visibility.
+
+✅ Improve SLA compliance and team accountability.`,
+  },
+  {
+    title: "Comprehensive Business Reports",
+    subtitle: `✅ Get insights with finance, task, timelog, and timesheet reports.
+
+✅ Export reports for analysis and performance tracking.
+
+✅ Make informed decisions using real-time data visualizations`,
+  },
+];
 
 export default function App() {
   return (
@@ -98,49 +156,58 @@ export default function App() {
       <Carousel
         loop
         width={width}
-        height={200}
+        height={250}
         autoPlay={true}
         data={data}
-        scrollAnimationDuration={1000}
+        scrollAnimationDuration={1500}
+        autoPlayInterval={2500}
         renderItem={({ index }) => (
-          <View style={[styles.slide, { backgroundColor: index % 2 === 0 ? '#3498db' : '#9b59b6' }]}>
-            <Text style={styles.text}>{data[index]}</Text>
+          <View style={styles.slide}>
+            <Text style={styles.title}>{data[index].title}</Text>
+            <Text style={styles.subtitle}>{data[index].subtitle}</Text>
           </View>
         )}
       />
+      <Pressable style={styles.btn}>
+        <Text style={styles.btnText}>Get Started</Text>
+      </Pressable>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#CDDCDC",
   },
   slide: {
-    flex: 1,
     borderRadius: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     marginHorizontal: 10,
+    gap: 24,
   },
-  text: {
-    color: '#fff',
+  title: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
+  subtitle: {
+    fontSize: 16,
+  },
+  btn: {
+    backgroundColor: "#98081D",
+    borderRadius: "4.8px",
+  },
+  btnText: {
+    color: "#fff",
+    padding: 16,
+    fontSize: 14,
+    fontWeight: "bold",
+  }
 });
-
-
-
-
-
-
-
-
-
-
-
 
 // import React from 'react';
 // import AppNavigator from './src/navigation/AppNavigator';
