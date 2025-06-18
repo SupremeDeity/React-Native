@@ -77,7 +77,7 @@
 // });
 
 import React from "react";
-import { View, Text, StyleSheet, Dimensions } from "react-native";
+import { View, Text, StyleSheet, Dimensions, Button, Pressable } from "react-native";
 import Carousel from "react-native-reanimated-carousel";
 
 const { width } = Dimensions.get("window");
@@ -168,6 +168,9 @@ export default function App() {
           </View>
         )}
       />
+      <Pressable style={styles.btn}>
+        <Text style={styles.btnText}>Get Started</Text>
+      </Pressable>
     </View>
   );
 }
@@ -194,6 +197,16 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 16,
   },
+  btn: {
+    backgroundColor: "#98081D",
+    borderRadius: "4.8px",
+  },
+  btnText: {
+    color: "#fff",
+    padding: 16,
+    fontSize: 14,
+    fontWeight: "bold",
+  }
 });
 
 // import React from 'react';
