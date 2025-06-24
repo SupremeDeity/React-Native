@@ -127,11 +127,11 @@ function SignUpScreen({ navigation }) {
 
         <View style={styles.footer}>
           <Text style={styles.footerText}>
-            Already have an account?{" "}
-            <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-              <Text style={styles.signUpText}>Log in</Text>
-            </TouchableOpacity>
+            Already have an account?
           </Text>
+          <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+            <Text style={styles.signUpText}>Log in</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </ScrollView>
@@ -188,11 +188,11 @@ function LoginScreen({ navigation }) {
 
         <View style={styles.footer}>
           <Text style={styles.footerText}>
-            Don't have an account yet?{" "}
-            <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
-              <Text style={styles.signUpText}>Sign up</Text>
-            </TouchableOpacity>
+            Don't have an account yet?
           </Text>
+          <TouchableOpacity onPress={() => navigation.navigate("Sign Up")}>
+            <Text style={styles.signUpText}>Sign up</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </ScrollView>
@@ -206,30 +206,32 @@ function HomeScreen({ navigation }) {
 
   return (
     <SafeAreaView style={styles.safe}>
-      <View style={styles.container}>
-        <Image style={styles.icon} source={require('./assets/adaptive-icon.png')} />
+      <View style={styles.homeContainer}>
+        <Image style={styles.iconLarge} source={require('./assets/adaptive-icon.png')} />
+        <Text style={styles.homeAppName}>Scit Forte</Text>
+        <Text style={styles.homeTagline}>
+          All-in-one platform for HRM, CRM, Projects, and more.
+        </Text>
         <Carousel
           loop
           width={width}
-          height={height * 0.7}
+          height={height * 0.45}
           autoPlay={true}
           data={data}
           scrollAnimationDuration={1500}
           autoPlayInterval={2500}
           renderItem={({ index }) => (
-            <View style={styles.card}>
-              <ScrollView style={styles.cardInternal}>
-                <Text style={styles.title}>{data[index].title}</Text>
-                <Text style={styles.subtitle}>{data[index].subtitle}</Text>
-              </ScrollView>
+            <View style={styles.homeCard}>
+              <Text style={styles.homeCardTitle}>{data[index].title}</Text>
+              <Text style={styles.homeCardSubtitle}>{data[index].subtitle}</Text>
             </View>
           )}
         />
         <Pressable
-          style={styles.btn}
+          style={styles.homeBtn}
           onPress={() => navigation.navigate("Login")}
         >
-          <Text style={styles.btnText}>Get Started</Text>
+          <Text style={styles.homeBtnText}>Get Started</Text>
         </Pressable>
       </View>
     </SafeAreaView>
@@ -243,7 +245,7 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
 
-        <Stack.Screen name="SignUp" component={SignUpScreen} />
+        <Stack.Screen name="Sign Up" component={SignUpScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -252,61 +254,6 @@ export default function App() {
 const styles = StyleSheet.create({
   safe: {
     flex: 1
-  },
-  container: {
-    height: "100%",
-    justifyContent: "space-evenly",
-    alignItems: "center",
-    paddingHorizontal: 16,
-    paddingVertical: 64,
-  },
-  appName: {
-    fontSize: 26,
-    fontWeight: "bold",
-    color: "#1E293B",
-    marginTop: 6,
-    marginBottom: 20,
-  },
-  card: {
-    backgroundColor: "#fff",
-    borderRadius: 16,
-    padding: 20,
-    display: "flex",
-    marginHorizontal: 23,
-    marginVertical: 23,
-    shadowColor: "#000",
-    minHeight: 260,
-    shadowOpacity: 0.1,
-    shadowOffset: { width: 0, height: 4 },
-    shadowRadius: 10,
-    elevation: 5,
-  },
-  title: {
-    textAlign: "center",
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "#111827",
-    marginBottom: 32,
-  },
-  subtitle: {
-    fontSize: 16,
-    color: "#374151",
-    lineHeight: 22,
-  },
-  btn: {
-    backgroundColor: "#98081D",
-    borderRadius: 10,
-    paddingVertical: 14,
-    paddingHorizontal: 32,
-    marginTop: 12,
-    alignSelf: "center",
-    position: "absolute",
-    bottom: 20,
-  },
-  btnText: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "bold",
   },
   loginBox: {
     backgroundColor: "#fff",
@@ -388,5 +335,70 @@ const styles = StyleSheet.create({
     width: 64,
     height: 64,
     marginBottom: 20,
-  }
+  },
+  homeContainer: {
+    flex: 1,
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    paddingHorizontal: 20,
+    paddingTop: 40,
+    backgroundColor: "#F1F5F9",
+  },
+  iconLarge: {
+    width: 80,
+    height: 80,
+    marginBottom: 18,
+  },
+  homeAppName: {
+    fontSize: 32,
+    fontWeight: "bold",
+    color: "#1E293B",
+    marginBottom: 6,
+    letterSpacing: 1,
+  },
+  homeTagline: {
+    fontSize: 16,
+    color: "#64748B",
+    marginBottom: 24,
+    textAlign: "center",
+    maxWidth: 320,
+  },
+  homeCard: {
+    backgroundColor: "#fff",
+    borderRadius: 18,
+    padding: 28,
+    marginHorizontal: 16,
+    elevation: 4,
+    minHeight: 180,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  homeCardTitle: {
+    fontSize: 22,
+    fontWeight: "bold",
+    color: "#111827",
+    marginBottom: 14,
+    textAlign: "center",
+  },
+  homeCardSubtitle: {
+    fontSize: 15,
+    color: "#374151",
+    lineHeight: 22,
+    textAlign: "center",
+  },
+  homeBtn: {
+    backgroundColor: "#98081D",
+    borderRadius: 12,
+    paddingVertical: 16,
+    paddingHorizontal: 48,
+    alignSelf: "center",
+    elevation: 2,
+    marginBottom: 48,
+  },
+  homeBtnText: {
+    color: "#fff",
+    fontSize: 18,
+    fontWeight: "bold",
+    letterSpacing: 1,
+  },
 });
