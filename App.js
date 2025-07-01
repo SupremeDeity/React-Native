@@ -111,10 +111,10 @@ function CustomDrawerContent(props) {
 function AppStack() {
   return (
     <Stack.Navigator>
+      <Stack.Screen name="Main" component={EmployeeDashboard} />
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Sign Up" component={SignUpScreen} />
-      <Stack.Screen name="Main" component={EmployeeDashboard} />
     </Stack.Navigator>
   );
 }
