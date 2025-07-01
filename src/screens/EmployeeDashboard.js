@@ -1,9 +1,15 @@
 import React from 'react';
 import { View, FlatList, StyleSheet, Text } from 'react-native';
-import EmployeeCard from '../components/EmployeeCard';
-import employees from '../data/employees';
+import EmployeeCard from '@components/EmployeeCard';
+import employees from '@data/employees';
+import { useEffect } from 'react';
 
-export default function EmployeeDashboard() {
+export default function EmployeeDashboard({ navigation }) {
+  useEffect(() => {
+    navigation.setOptions({
+      
+    });
+  }, [navigation])
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Employee Management</Text>
