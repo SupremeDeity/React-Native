@@ -1,581 +1,4 @@
-// import { StatusBar } from 'expo-status-bar';
-// import { StyleSheet, Text, View } from 'react-native';
-
-// export default function App() {
-//   return (
-//     <View style={styles.container}>
-//       <Text>Open up App.js to start working on your app!</Text>
-//       <StatusBar style="auto" />
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
-
-// import React from 'react';
-// import { View, Text, StyleSheet, Dimensions } from 'react-native';
-// import { Carousel } from 'react-native-snap-carousel'; // ✅ CORRECT
-
-// const { width: screenWidth } = Dimensions.get('window');
-
-// const data = [
-//   { title: 'Slide 1', backgroundColor: '#FF6B6B' },
-//   { title: 'Slide 2', backgroundColor: '#6BCB77' },
-//   { title: 'Slide 3', backgroundColor: '#4D96FF' },
-// ];
-
-// export default function App() {
-//   const renderItem = ({ item }) => (
-//     <View style={[styles.slide, { backgroundColor: item.backgroundColor }]}>
-//       <Text style={styles.title}>{item.title}</Text>
-//     </View>
-//   );
-
-//   return (
-//     <View style={styles.container}>
-//       <Carousel
-//         data={data}
-//         renderItem={renderItem}
-//         sliderWidth={screenWidth}
-//         itemWidth={screenWidth * 0.8}
-//         loop={true}
-//         autoplay={true}
-//         autoplayInterval={2500}
-//       />
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//   },
-//   slide: {
-//     borderRadius: 10,
-//     height: 200,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     padding: 20,
-//   },
-//   title: {
-//     fontSize: 24,
-//     fontWeight: 'bold',
-//     color: '#fff',
-//   },
-//   webview: {
-//     flex: 1,
-//   },
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from "react";
-// import { View, Text, StyleSheet, Dimensions, Button, Pressable } from "react-native";
-// import Carousel from "react-native-reanimated-carousel";
-
-// const { width } = Dimensions.get("window");
-
-// const data = [
-//   {
-//     title: "One Platform, Endless Possibilities for Your Business",
-//     subtitle:
-//       "From HRM, Finance, and CRM to Projects, Tickets, Orders, and Reports—streamline operations, boost collaboration, and stay in control with our all-in-one ERP.",
-//   },
-//   {
-//     title: "Manage Employee Profiles & Streamline Leave Management",
-//     subtitle: `✅ Maintain comprehensive employee records including personal details, designations, departments, and documents.
-
-// ✅ Centralized access for HR to manage and update employee data securely.
-
-// ✅ Employees can apply for leaves with a simple workflow.
-
-// ✅ Managers receive notifications and can approve / reject requests.
-
-// ✅ Auto - tracking of leave balances and history.`,
-//   },
-//   {
-//     title: "Visual CRM with Lead & Client Portfolio",
-//     subtitle: `✅ Kanban-style lead tracking from prospect to conversion.
-
-// ✅ Manage client portfolios with associated projects, contracts, and invoices.
-
-// ✅ Gain visibility into client lifecycle and engagement history.`,
-//   },
-//   {
-//     title: "Project & Task Management Simplified",
-//     subtitle: `✅ Create projects, break them into tasks, and assign them to team members.
-
-// ✅ Monitor task progress, deadlines, and priority levels
-
-// ✅ Enable team collaboration with comments and status updates.`,
-//   },
-//   {
-//     title: "Timesheet & Timelog Tracking",
-//     subtitle: `✅ Log working hours against tasks and projects.
-
-// ✅ Track billable vs non-billable time.
-
-// ✅ Generate accurate timesheets for payroll or invoicing.`,
-//   },
-//   {
-//     title: "Internal Messaging For Collaboration",
-//     subtitle: `✅ Team members can communicate instantly within the platform.
-
-// ✅ Supports one-to-one or group conversations.
-
-// ✅ Reduces reliance on external chat tools and improves coordination`,
-//   },
-//   {
-//     title: "Efficient Support Ticket Handling",
-//     subtitle: `✅ Create and assign tickets for internal or customer issues.
-
-// ✅ Set priorities, track status, and resolve with full history visibility.
-
-// ✅ Improve SLA compliance and team accountability.`,
-//   },
-//   {
-//     title: "Comprehensive Business Reports",
-//     subtitle: `✅ Get insights with finance, task, timelog, and timesheet reports.
-
-// ✅ Export reports for analysis and performance tracking.
-
-// ✅ Make informed decisions using real-time data visualizations`,
-//   },
-// ];
-
-// export default function App() {
-//   return (
-//     <View style={styles.container}>
-//       <Carousel
-//         loop
-//         width={width}
-//         height={250}
-//         autoPlay={true}
-//         data={data}
-//         scrollAnimationDuration={1500}
-//         autoPlayInterval={2500}
-//         renderItem={({ index }) => (
-//           <View style={styles.slide}>
-//             <Text style={styles.title}>{data[index].title}</Text>
-//             <Text style={styles.subtitle}>{data[index].subtitle}</Text>
-//           </View>
-//         )}
-//       />
-//       <Pressable style={styles.btn}>
-//         <Text style={styles.btnText}>Get Started</Text>
-//       </Pressable>
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     display: "flex",
-//     justifyContent: "center",
-//     alignItems: "center",
-//     backgroundColor: "#CDDCDC",
-//   },
-//   slide: {
-//     borderRadius: 10,
-//     display: "flex",
-//     justifyContent: "center",
-//     alignItems: "center",
-//     marginHorizontal: 10,
-//     gap: 24,
-//   },
-//   title: {
-//     fontSize: 24,
-//     fontWeight: "bold",
-//   },
-//   subtitle: {
-//     fontSize: 16,
-//   },
-//   btn: {
-//     backgroundColor: "#98081D",
-//     borderRadius: "4.8px",
-//   },
-//   btnText: {
-//     color: "#fff",
-//     padding: 16,
-//     fontSize: 14,
-//     fontWeight: "bold",
-//   }
-// });
-
-
-
-
-
-
-
-
-
-
-// import React from "react";
-// import {
-//   View,
-//   Text,
-//   StyleSheet,
-//   Dimensions,
-//   Pressable,
-//   SafeAreaView,
-//   ScrollView,
-// } from "react-native";
-// import Carousel from "react-native-reanimated-carousel";
-
-// const { width, height } = Dimensions.get("window");
-
-// const data = [
-//   {
-//     title: "One Platform, Endless Possibilities for Your Business",
-//     subtitle:
-//       "From HRM, Finance, and CRM to Projects, Tickets, Orders, and Reports—streamline operations, boost collaboration, and stay in control with our all-in-one ERP.",
-//   },
-//   {
-//     title: "Manage Employee Profiles & Streamline Leave Management",
-//     subtitle: `✅ Maintain employee records\n✅ Leave workflow & approvals\n✅ Auto-tracking balances`,
-//   },
-//   {
-//     title: "Visual CRM with Lead & Client Portfolio",
-//     subtitle: `✅ Kanban lead tracking\n✅ Client portfolio with contracts\n✅ Full engagement visibility`,
-//   },
-//   {
-//     title: "Project & Task Management Simplified",
-//     subtitle: `✅ Create & assign tasks\n✅ Track deadlines & priorities\n✅ Team collaboration`,
-//   },
-//   {
-//     title: "Timesheet & Timelog Tracking",
-//     subtitle: `✅ Log hours to tasks/projects\n✅ Billable vs non-billable\n✅ Payroll-ready reports`,
-//   },
-//   {
-//     title: "Internal Messaging For Collaboration",
-//     subtitle: `✅ Instant team messaging\n✅ Group & private chats\n✅ No external tools needed`,
-//   },
-//   {
-//     title: "Efficient Support Ticket Handling",
-//     subtitle: `✅ Create/assign tickets\n✅ Track status & history\n✅ Boost SLA compliance`,
-//   },
-//   {
-//     title: "Comprehensive Business Reports",
-//     subtitle: `✅ Finance & task reports\n✅ Export & analyze\n✅ Real-time insights`,
-//   },
-// ];
-
-// export default function App() {
-//   return (
-//     <SafeAreaView style={styles.safe}>
-//       <View style={styles.container}>
-//         <Text style={styles.appName}>ERP Master</Text>
-
-//         <Carousel
-//           loop
-//           width={width}
-//           height={height * 0.7} // Adjusted to occupy 70% of the screen height
-//           autoPlay={true}
-//           data={data}
-//           scrollAnimationDuration={1500}
-//           autoPlayInterval={2500}
-//           renderItem={({ index }) => (
-//             <View style={styles.card}>
-//               <ScrollView showsVerticalScrollIndicator={false}>
-//                 <Text style={styles.title}>{data[index].title}</Text>
-//                 <Text style={styles.subtitle}>{data[index].subtitle}</Text>
-//               </ScrollView>
-
-//               {/* "Get Started" button inside the carousel container */}
-//               <Pressable style={styles.btn}>
-//                 <Text style={styles.btnText}>Get Started</Text>
-//               </Pressable>
-//             </View>
-//           )}
-//         />
-//       </View>
-//     </SafeAreaView>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   safe: {
-//     flex: 1,
-//     backgroundColor: "#F1F5F9",
-//   },
-//   container: {
-//     flex: 1,
-//     paddingHorizontal: 16,
-//     justifyContent: "center", // Centers vertically
-//     alignItems: "center", // Centers horizontally
-//   },
-//   appName: {
-//     fontSize: 26,
-//     fontWeight: "bold",
-//     color: "#1E293B",
-//     marginBottom: 10,
-//   },
-//   card: {
-//     backgroundColor: "#fff",
-//     // Apply border radius only on the top corners
-//     borderTopLeftRadius: 16,
-//     borderTopRightRadius: 16,
-//     padding: 20,
-//     marginHorizontal: 12,
-//     width: width - 32,
-//     height: height * 0.7, // 70% of the screen height
-//     justifyContent: "flex-end", // Pushes the button to the bottom
-//     shadowColor: "#000",
-//     shadowOpacity: 0.1,
-//     shadowOffset: { width: 0, height: 4 },
-//     shadowRadius: 10,
-//     elevation: 5,
-//   },
-//   title: {
-//     fontSize: 20,
-//     fontWeight: "bold",
-//     color: "#111827",
-//     marginBottom: 12,
-//   },
-//   subtitle: {
-//     fontSize: 16,
-//     color: "#374151",
-//     lineHeight: 22,
-//   },
-//   btn: {
-//     backgroundColor: "#98081D",
-//     borderRadius: 10,
-//     paddingVertical: 14,
-//     paddingHorizontal: 32,
-//     marginTop: 12,
-//     alignSelf: "center", // Centers the button horizontally
-//     position: "absolute", // To place it inside the card
-//     bottom: 20, // Makes it stick to the bottom inside the carousel container
-//   },
-//   btnText: {
-//     color: "#fff",
-//     fontSize: 16,
-//     fontWeight: "bold",
-//   },
-// });
-
-
-
-
-
-// import React from "react";
-// import {
-//   View,
-//   Text,
-//   StyleSheet,
-//   Dimensions,
-//   Pressable,
-//   SafeAreaView,
-//   ScrollView,
-// } from "react-native";
-// import Carousel from "react-native-reanimated-carousel";
-// import { NavigationContainer } from "@react-navigation/native";
-// import { createStackNavigator } from "@react-navigation/stack";
-
-// // Create Stack navigator
-// const Stack = createStackNavigator();
-// const { width, height } = Dimensions.get("window");
-
-// const data = [
-//   {
-//     title: "One Platform, Endless Possibilities for Your Business",
-//     subtitle:
-//       "From HRM, Finance, and CRM to Projects, Tickets, Orders, and Reports—streamline operations, boost collaboration, and stay in control with our all-in-one ERP.",
-//   },
-//   {
-//     title: "Manage Employee Profiles & Streamline Leave Management",
-//     subtitle: `✅ Maintain employee records\n✅ Leave workflow & approvals\n✅ Auto-tracking balances`,
-//   },
-//   {
-//     title: "Visual CRM with Lead & Client Portfolio",
-//     subtitle: `✅ Kanban lead tracking\n✅ Client portfolio with contracts\n✅ Full engagement visibility`,
-//   },
-//   {
-//     title: "Project & Task Management Simplified",
-//     subtitle: `✅ Create & assign tasks\n✅ Track deadlines & priorities\n✅ Team collaboration`,
-//   },
-//   {
-//     title: "Timesheet & Timelog Tracking",
-//     subtitle: `✅ Log hours to tasks/projects\n✅ Billable vs non-billable\n✅ Payroll-ready reports`,
-//   },
-//   {
-//     title: "Internal Messaging For Collaboration",
-//     subtitle: `✅ Instant team messaging\n✅ Group & private chats\n✅ No external tools needed`,
-//   },
-//   {
-//     title: "Efficient Support Ticket Handling",
-//     subtitle: `✅ Create/assign tickets\n✅ Track status & history\n✅ Boost SLA compliance`,
-//   },
-//   {
-//     title: "Comprehensive Business Reports",
-//     subtitle: `✅ Finance & task reports\n✅ Export & analyze\n✅ Real-time insights`,
-//   },
-// ];
-
-// function LoginScreen() {
-//   return (
-//     <View style={styles.loginContainer}>
-//       <Text style={styles.loginText}>Welcome to Login Page</Text>
-//     </View>
-//   );
-// }
-
-// function HomeScreen({ navigation }) {
-//   return (
-//     <SafeAreaView style={styles.safe}>
-//       <View style={styles.container}>
-//         <Text style={styles.appName}>ERP Master</Text>
-
-//         <Carousel
-//           loop
-//           width={width}
-//           height={height * 0.7}
-//           autoPlay={true}
-//           data={data}
-//           scrollAnimationDuration={1500}
-//           autoPlayInterval={2500}
-//           renderItem={({ index }) => (
-//             <View style={styles.card}>
-//               <ScrollView showsVerticalScrollIndicator={false}>
-//                 <Text style={styles.title}>{data[index].title}</Text>
-//                 <Text style={styles.subtitle}>{data[index].subtitle}</Text>
-//               </ScrollView>
-
-//               {/* "Get Started" button inside the carousel container */}
-//               <Pressable
-//                 style={styles.btn}
-//                 onPress={() => navigation.navigate("Login")}
-//               >
-//                 <Text style={styles.btnText}>Get Started</Text>
-//               </Pressable>
-//             </View>
-//           )}
-//         />
-//       </View>
-//     </SafeAreaView>
-//   );
-// }
-
-// export default function App() {
-//   return (
-//     <NavigationContainer>
-//       <Stack.Navigator initialRouteName="Home">
-//         <Stack.Screen name="Home" component={HomeScreen} />
-//         <Stack.Screen name="Login" component={LoginScreen} />
-//       </Stack.Navigator>
-//     </NavigationContainer>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   safe: {
-//     flex: 1,
-//     backgroundColor: "#F1F5F9",
-//   },
-//   container: {
-//     flex: 1,
-//     paddingHorizontal: 16,
-//     justifyContent: "flex-start", // Align to the top
-//     alignItems: "center",
-//   },
-//   appName: {
-//     fontSize: 26,
-//     fontWeight: "bold",
-//     color: "#1E293B",
-//     marginTop: 16, // Add a bit of space from the top
-//     marginBottom: 10,
-//   },
-//   card: {
-//     backgroundColor: "#fff",
-//     borderTopLeftRadius: 16,
-//     borderTopRightRadius: 16,
-//     padding: 20,
-//     marginHorizontal: 12,
-//     width: width - 32,
-//     height: height * 0.7,
-//     justifyContent: "flex-end",
-//     shadowColor: "#000",
-//     shadowOpacity: 0.1,
-//     shadowOffset: { width: 0, height: 4 },
-//     shadowRadius: 10,
-//     elevation: 5,
-//   },
-//   title: {
-//     fontSize: 20,
-//     fontWeight: "bold",
-//     color: "#111827",
-//     marginBottom: 12,
-//   },
-//   subtitle: {
-//     fontSize: 16,
-//     color: "#374151",
-//     lineHeight: 22,
-//   },
-//   btn: {
-//     backgroundColor: "#98081D",
-//     borderRadius: 10,
-//     paddingVertical: 14,
-//     paddingHorizontal: 32,
-//     marginTop: 12,
-//     alignSelf: "center",
-//     position: "absolute",
-//     bottom: 20,
-//   },
-//   btnText: {
-//     color: "#fff",
-//     fontSize: 16,
-//     fontWeight: "bold",
-//   },
-//   loginContainer: {
-//     flex: 1,
-//     justifyContent: "center",
-//     alignItems: "center",
-//   },
-//   loginText: {
-//     fontSize: 24,
-//     fontWeight: "bold",
-//     color: "#1E293B",
-//   },
-// });
-
-
-
-
-
-
-
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -587,13 +10,40 @@ import {
   Pressable,
   Alert,
   Dimensions,
+  Image,
 } from "react-native";
 import Carousel from "react-native-reanimated-carousel";
 import { NavigationContainer } from "@react-navigation/native";
+import {
+  createDrawerNavigator,
+  DrawerContentScrollView,
+} from "@react-navigation/drawer";
 import { createStackNavigator } from "@react-navigation/stack";
+import Icon from "react-native-vector-icons/Ionicons";
 
 const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 const { width, height } = Dimensions.get("window");
+
+const drawerItems = [
+  { name: "Dashboard", icon: "home-outline" },
+  {
+    name: "HR",
+    icon: "people-outline",
+    subItems: ["Employees", "Attendance", "Leave Requests"],
+  },
+  {
+    name: "Work",
+    icon: "briefcase-outline",
+    subItems: ["Projects", "Tasks"],
+  },
+  { name: "Tickets", icon: "headset-outline" },
+  { name: "Events", icon: "calendar-outline" },
+  { name: "Messages", icon: "chatbubbles-outline" },
+  { name: "Notice Board", icon: "clipboard-outline" },
+  { name: "Google Meet", icon: "link-outline" },
+  { name: "Settings", icon: "settings-outline" },
+];
 
 const data = [
   {
@@ -630,6 +80,71 @@ const data = [
     subtitle: `✅ Finance & task reports\n✅ Export & analyze\n✅ Real-time insights`,
   },
 ];
+
+function CustomDrawerContent(props) {
+  const [expanded, setExpanded] = useState({});
+  const [collapsed, setCollapsed] = useState(false);
+
+  const toggleExpand = (name) => {
+    setExpanded((prev) => ({ ...prev, [name]: !prev[name] }));
+  };
+
+  return (
+    <DrawerContentScrollView {...props} style={styles.drawerScroll}>
+      <View style={styles.logoBox}>
+        <Image source={require("./assets/logo.png")} style={styles.logo} />
+      </View>
+
+      {drawerItems.map((item, index) => (
+        <View key={index}>
+          <TouchableOpacity
+            style={styles.drawerItem}
+            onPress={() => {
+              if (item.subItems) {
+                toggleExpand(item.name);
+              } else {
+                props.navigation.navigate(item.name);
+              }
+            }}
+          >
+            <Icon
+              name={item.icon}
+              size={20}
+              color="#fff"
+              style={styles.drawerIcon}
+            />
+            {!collapsed && (
+              <>
+                <Text style={styles.drawerLabel}>{item.name}</Text>
+                {item.subItems && (
+                  <Icon
+                    name={expanded[item.name] ? "chevron-up" : "chevron-down"}
+                    size={18}
+                    color="#fff"
+                    style={{ marginLeft: "auto" }}
+                  />
+                )}
+              </>
+            )}
+          </TouchableOpacity>
+
+          {!collapsed &&
+            expanded[item.name] &&
+            item.subItems?.map((sub, i) => (
+              <TouchableOpacity
+                key={i}
+                style={styles.drawerSubItem}
+                onPress={() => props.navigation.navigate(sub)}
+              >
+                <Text style={styles.drawerSubLabel}>{sub}</Text>
+              </TouchableOpacity>
+            ))}
+        </View>
+      ))}
+    </DrawerContentScrollView>
+  );
+}
+
 function SignUpScreen({ navigation }) {
   const [companyName, setCompanyName] = useState("");
   const [name, setName] = useState("");
@@ -642,12 +157,10 @@ function SignUpScreen({ navigation }) {
       Alert.alert("Error", "Please fill in all fields.");
       return;
     }
-
     if (password !== confirmPassword) {
       Alert.alert("Error", "Passwords do not match.");
       return;
     }
-
     Alert.alert("Success", "Signed up successfully.");
     navigation.navigate("Login");
   };
@@ -656,21 +169,18 @@ function SignUpScreen({ navigation }) {
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.loginBox}>
         <Text style={styles.headerText}>Sign Up</Text>
-
         <TextInput
           style={styles.input}
           placeholder="Company Name"
           value={companyName}
           onChangeText={setCompanyName}
         />
-
         <TextInput
           style={styles.input}
           placeholder="Name"
           value={name}
           onChangeText={setName}
         />
-
         <TextInput
           style={styles.input}
           placeholder="Email"
@@ -679,7 +189,6 @@ function SignUpScreen({ navigation }) {
           keyboardType="email-address"
           autoCapitalize="none"
         />
-
         <TextInput
           style={styles.input}
           placeholder="Password"
@@ -687,7 +196,6 @@ function SignUpScreen({ navigation }) {
           onChangeText={setPassword}
           secureTextEntry
         />
-
         <TextInput
           style={styles.input}
           placeholder="Confirm Password"
@@ -695,23 +203,20 @@ function SignUpScreen({ navigation }) {
           onChangeText={setConfirmPassword}
           secureTextEntry
         />
-
         <TouchableOpacity style={styles.loginButton} onPress={handleSignUp}>
           <Text style={styles.loginButtonText}>Sign Up</Text>
         </TouchableOpacity>
-
         <View style={styles.footer}>
-          <Text style={styles.footerText}>
-            Already have an account?{" "}
-            <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-              <Text style={styles.signUpText}>Log in</Text>
-            </TouchableOpacity>
-          </Text>
+          <Text style={styles.footerText}>Already have an account?</Text>
+          <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+            <Text style={styles.signUpText}>Log in</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </ScrollView>
   );
 }
+
 function LoginScreen({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -722,17 +227,14 @@ function LoginScreen({ navigation }) {
       Alert.alert("Error", "Please enter both email and password.");
       return;
     }
-
-    // Simulate login success (use your own API for real-world scenarios)
     Alert.alert("Success", "Logged in successfully.");
-    navigation.navigate("Home"); // Navigate after successful login
+    navigation.navigate("Home");
   };
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.loginBox}>
         <Text style={styles.headerText}>Log In</Text>
-
         <TextInput
           style={styles.input}
           placeholder="Email"
@@ -741,7 +243,6 @@ function LoginScreen({ navigation }) {
           keyboardType="email-address"
           autoCapitalize="none"
         />
-
         <TextInput
           style={styles.input}
           placeholder="Password"
@@ -749,25 +250,23 @@ function LoginScreen({ navigation }) {
           onChangeText={setPassword}
           secureTextEntry
         />
-
         <View style={styles.checkboxContainer}>
-          <TouchableOpacity onPress={() => setRemember(!remember)} style={styles.checkbox}>
+          <TouchableOpacity
+            onPress={() => setRemember(!remember)}
+            style={styles.checkbox}
+          >
             {remember && <View style={styles.checkboxChecked} />}
           </TouchableOpacity>
           <Text style={styles.checkboxLabel}>Stay logged in</Text>
         </View>
-
         <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
           <Text style={styles.loginButtonText}>Log In</Text>
         </TouchableOpacity>
-
         <View style={styles.footer}>
-          <Text style={styles.footerText}>
-            Don't have an account yet?{" "}
-            <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
-              <Text style={styles.signUpText}>Sign up</Text>
-            </TouchableOpacity>
-          </Text>
+          <Text style={styles.footerText}>Don't have an account yet?</Text>
+          <TouchableOpacity onPress={() => navigation.navigate("Sign Up")}>
+            <Text style={styles.signUpText}>Sign up</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </ScrollView>
@@ -775,111 +274,129 @@ function LoginScreen({ navigation }) {
 }
 
 function HomeScreen({ navigation }) {
+  useEffect(() => {
+    navigation.setOptions({
+      headerShown: true,
+      headerTitle: "",
+      headerLeft: () => (
+        <TouchableOpacity
+          onPress={() => navigation.openDrawer()}
+          style={{ paddingLeft: 20 }}
+        >
+          <Icon name="menu-outline" size={28} color="#000" />
+        </TouchableOpacity>
+      ),
+    });
+  }, [navigation]);
+
   return (
     <SafeAreaView style={styles.safe}>
-      <View style={styles.container}>
-        <Text style={styles.appName}>ERP Master</Text>
-
+      <View style={styles.homeContainer}>
+        <Image
+          style={styles.iconLarge}
+          source={require("./assets/adaptive-icon.png")}
+        />
+        <Text style={styles.homeAppName}>Scit Forte</Text>
+        <Text style={styles.homeTagline}>
+          All-in-one platform for HRM, CRM, Projects, and more.
+        </Text>
         <Carousel
           loop
           width={width}
-          height={height * 0.7}
-          autoPlay={true}
+          height={height * 0.45}
+          autoPlay
           data={data}
           scrollAnimationDuration={1500}
           autoPlayInterval={2500}
           renderItem={({ index }) => (
-            <View style={styles.card}>
-              <ScrollView showsVerticalScrollIndicator={false}>
-                <Text style={styles.title}>{data[index].title}</Text>
-                <Text style={styles.subtitle}>{data[index].subtitle}</Text>
-              </ScrollView>
-
-              <Pressable
-                style={styles.btn}
-                onPress={() => navigation.navigate("Login")}
-              >
-                <Text style={styles.btnText}>Get Started</Text>
-              </Pressable>
+            <View style={styles.homeCard}>
+              <Text style={styles.homeCardTitle}>{data[index].title}</Text>
+              <Text style={styles.homeCardSubtitle}>
+                {data[index].subtitle}
+              </Text>
             </View>
           )}
         />
+        <Pressable
+          style={styles.homeBtn}
+          onPress={() => navigation.navigate("Login")}
+        >
+          <Text style={styles.homeBtnText}>Get Started</Text>
+        </Pressable>
       </View>
     </SafeAreaView>
+  );
+}
+
+function AppStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Sign Up" component={SignUpScreen} />
+    </Stack.Navigator>
   );
 }
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Login" component={LoginScreen} />
-
-        <Stack.Screen name="SignUp" component={SignUpScreen} />
-      </Stack.Navigator>
+      <Drawer.Navigator
+        screenOptions={{ headerShown: false }}
+        drawerContent={(props) => <CustomDrawerContent {...props} />}
+      >
+        <Drawer.Screen name="AppStack" component={AppStack} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
-  safe: {
-    flex: 1,
-    backgroundColor: "#F1F5F9",
+  drawerScroll: { backgroundColor: "#111827" },
+  logoBox: {
+    padding: 16,
+    flexDirection: "row",
+    alignItems: "center",
+    borderBottomWidth: 1,
+    borderBottomColor: "#1f2937",
   },
-  container: {
-    flex: 1,
-    justifyContent: "center", // This centers the loginBox vertically
-    alignItems: "center", // This centers the loginBox horizontally
-    paddingHorizontal: 16,
+  logo: {
+    width: 100,
+    height: 50,
+    marginRight: 10,
   },
-  appName: {
-    fontSize: 26,
-    fontWeight: "bold",
-    color: "#1E293B",
-    marginTop: 6,
-    marginBottom: 20,
-  },
-  card: {
-    backgroundColor: "#fff",
-    borderTopLeftRadius: 16,
-    borderTopRightRadius: 16,
-    padding: 20,
-    marginHorizontal:23,
-    width: width - 44,
-    height: height * 0.7,
-    justifyContent: "flex-start",
-    shadowColor: "#000",
-    shadowOpacity: 0.1,
-    shadowOffset: { width: 0, height: 4 },
-    shadowRadius: 10,
-    elevation: 5,
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "#111827",
-    marginBottom: 12,
-  },
-  subtitle: {
-    fontSize: 16,
-    color: "#374151",
-    lineHeight: 22,
-  },
-  btn: {
-    backgroundColor: "#98081D",
-    borderRadius: 10,
+  drawerItem: {
+    flexDirection: "row",
+    alignItems: "center",
     paddingVertical: 14,
-    paddingHorizontal: 32,
-    marginTop: 12,
-    alignSelf: "center",
-    position: "absolute",
-    bottom: 20,
+    paddingHorizontal: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: "#1f2937",
   },
-  btnText: {
+  drawerIcon: {
+    marginRight: 20,
+  },
+  drawerLabel: {
     color: "#fff",
     fontSize: 16,
-    fontWeight: "bold",
+  },
+  drawerSubItem: {
+    paddingLeft: 60,
+    paddingVertical: 10,
+  },
+  drawerSubLabel: {
+    color: "#ffffff",
+    fontSize: 14,
+  },
+  safe: {
+    flex: 1,
+  },
+  container: {
+    flexGrow: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 20,
+    backgroundColor: "#f9fafb",
   },
   loginBox: {
     backgroundColor: "#fff",
@@ -957,102 +474,69 @@ const styles = StyleSheet.create({
     color: "#3a8dff",
     fontWeight: "bold",
   },
+  iconLarge: {
+    width: 80,
+    height: 80,
+    marginBottom: 18,
+  },
+  homeContainer: {
+    flex: 1,
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    paddingHorizontal: 20,
+    paddingTop: 40,
+    backgroundColor: "#F1F5F9",
+  },
+  homeAppName: {
+    fontSize: 32,
+    fontWeight: "bold",
+    color: "#1E293B",
+    marginBottom: 6,
+    letterSpacing: 1,
+  },
+  homeTagline: {
+    fontSize: 16,
+    color: "#64748B",
+    marginBottom: 24,
+    textAlign: "center",
+    maxWidth: 320,
+  },
+  homeCard: {
+    backgroundColor: "#fff",
+    borderRadius: 18,
+    padding: 28,
+    marginHorizontal: 16,
+    elevation: 4,
+    minHeight: 180,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  homeCardTitle: {
+    fontSize: 22,
+    fontWeight: "bold",
+    color: "#111827",
+    marginBottom: 14,
+    textAlign: "center",
+  },
+  homeCardSubtitle: {
+    fontSize: 15,
+    color: "#374151",
+    lineHeight: 22,
+    textAlign: "center",
+  },
+  homeBtn: {
+    backgroundColor: "#98081D",
+    borderRadius: 12,
+    paddingVertical: 16,
+    paddingHorizontal: 48,
+    alignSelf: "center",
+    elevation: 2,
+    marginBottom: 48,
+  },
+  homeBtnText: {
+    color: "#fff",
+    fontSize: 18,
+    fontWeight: "bold",
+    letterSpacing: 1,
+  },
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from 'react';
-// import AppNavigator from './src/navigation/AppNavigator';
-
-// export default function App() {
-//   return <AppNavigator />;
-// }
-
-// import React from 'react';
-// import { View, Text, StyleSheet, Dimensions } from 'react-native';
-// import Carousel from 'react-native-snap-carousel';
-
-// const { width: screenWidth } = Dimensions.get('window');
-
-// const data = [
-//   { title: 'Slide 1', backgroundColor: '#FF6B6B' },
-//   { title: 'Slide 2', backgroundColor: '#6BCB77' },
-//   { title: 'Slide 3', backgroundColor: '#4D96FF' },
-// ];
-
-// export default function App() {
-//   const renderItem = ({ item }) => (
-//     <View style={[styles.item, { backgroundColor: item.backgroundColor }]}>
-//       <Text style={styles.title}>{item.title}</Text>
-//     </View>
-//   );
-
-//   return (
-//     <View style={styles.container}>
-//       <Carousel
-//         data={data}
-//         renderItem={renderItem}
-//         sliderWidth={screenWidth}
-//         itemWidth={screenWidth * 0.8}
-//         loop={true}
-//         autoplay={true}
-//       />
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//   },
-//   item: {
-//     borderRadius: 10,
-//     height: 200,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//   },
-//   title: {
-//     fontSize: 22,
-//     color: '#fff',
-//     fontWeight: 'bold',
-//   },
-// });
