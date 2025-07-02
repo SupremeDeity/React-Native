@@ -84,6 +84,16 @@ export default function EmployeeDashboard({ navigation }) {
         </View>
       </View>
 
+      {/* Reports Section Card */}
+      <View style={styles.reportsCard}>
+        <Text style={styles.reportsTitle}>Reports</Text>
+        <Text style={styles.reportsSubtitle}>Generate and view your performance reports</Text>
+        <TouchableOpacity style={styles.generateReportsBtn}>
+          <Icon name="document-text-outline" style={{ color: "#98081D", fontSize: 20 }} />
+          <Text style={styles.generateReportsBtnText}>Generate Reports</Text>
+        </TouchableOpacity>
+      </View>
+
     </View>
   );
 }
@@ -205,5 +215,47 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     color: '#1F2937',
+  },
+  reportsCard: {
+    backgroundColor: '#fff',
+    borderRadius: 12,
+    padding: 20,
+    marginTop: 20,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  reportsTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#1F2937',
+    marginBottom: 4,
+  },
+  reportsSubtitle: {
+    fontSize: 14,
+    color: '#6B7280',
+    marginBottom: 16,
+  },
+  generateReportsBtn: {
+    backgroundColor: '#F8F9FA',
+    borderWidth: 1,
+    borderColor: '#98081D',
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 10,
+  },
+  generateReportsBtnText: {
+    color: '#98081D',
+    fontSize: 16,
+    fontWeight: '600',
   },
 });
