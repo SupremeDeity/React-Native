@@ -18,55 +18,58 @@ export default function SalesReportScreen() {
         <Text style={styles.exportText}>Export</Text>
       </TouchableOpacity>
 
-      <View style={styles.tableHeader}>
-        {[
-          "Paid On",
-          "Invoice Number",
-          "Client Name",
-          "Invoice Value",
-          "Amount Paid",
-          "Taxable Value",
-          "Discount",
-          "Sindh Tax",
-          "Punjab Tax",
-          "KPK Tax",
-          "Balochistan Tax",
-          "Withholding Tax",
-          "Income Tax",
-          "Bank Account",
-        ].map((heading, idx) => (
-          <Text key={idx} style={styles.headerCell}>{heading}</Text>
-        ))}
-      </View>
-
-      {salesData.length === 0 ? (
-        <View style={styles.noDataBox}>
-          <Text style={styles.noDataText}>No data available in table</Text>
-        </View>
-      ) : (
-        <FlatList
-          data={salesData}
-          keyExtractor={(_, index) => index.toString()}
-          renderItem={({ item }) => (
-            <View style={styles.tableRow}>
-              <Text style={styles.cell}>{item.paidOn}</Text>
-              <Text style={styles.cell}>{item.invoiceNumber}</Text>
-              <Text style={styles.cell}>{item.clientName}</Text>
-              <Text style={styles.cell}>{item.invoiceValue}</Text>
-              <Text style={styles.cell}>{item.amountPaid}</Text>
-              <Text style={styles.cell}>{item.taxableValue}</Text>
-              <Text style={styles.cell}>{item.discount}</Text>
-              <Text style={styles.cell}>{item.sindhTax}</Text>
-              <Text style={styles.cell}>{item.punjabTax}</Text>
-              <Text style={styles.cell}>{item.kpkTax}</Text>
-              <Text style={styles.cell}>{item.balochistanTax}</Text>
-              <Text style={styles.cell}>{item.withholdingTax}</Text>
-              <Text style={styles.cell}>{item.incomeTax}</Text>
-              <Text style={styles.cell}>{item.bankAccount}</Text>
+      <View style={styles.tableContainer}>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          <View>
+            <View style={styles.tableHeader}>
+              <Text style={styles.headerCell}>Paid On</Text>
+              <Text style={styles.headerCell}>Invoice Number</Text>
+              <Text style={styles.headerCell}>Client Name</Text>
+              <Text style={styles.headerCell}>Invoice Value</Text>
+              <Text style={styles.headerCell}>Amount Paid</Text>
+              <Text style={styles.headerCell}>Taxable Value</Text>
+              <Text style={styles.headerCell}>Discount</Text>
+              <Text style={styles.headerCell}>Sindh Tax</Text>
+              <Text style={styles.headerCell}>Punjab Tax</Text>
+              <Text style={styles.headerCell}>KPK Tax</Text>
+              <Text style={styles.headerCell}>Balochistan Tax</Text>
+              <Text style={styles.headerCell}>Withholding Tax</Text>
+              <Text style={styles.headerCell}>Income Tax</Text>
+              <Text style={styles.headerCell}>Bank Account</Text>
             </View>
-          )}
-        />
-      )}
+
+            {salesData.length === 0 ? (
+              <View style={styles.noDataBox}>
+                <Text style={styles.noDataText}>No data available in table</Text>
+              </View>
+            ) : (
+              <FlatList
+                data={salesData}
+                keyExtractor={(_, index) => index.toString()}
+                renderItem={({ item, index }) => (
+                  <View style={[styles.tableRow, index % 2 === 0 ? styles.rowEven : styles.rowOdd]}>
+                    <Text style={styles.cell}>{item.paidOn}</Text>
+                    <Text style={styles.cell}>{item.invoiceNumber}</Text>
+                    <Text style={styles.cell}>{item.clientName}</Text>
+                    <Text style={styles.cell}>{item.invoiceValue}</Text>
+                    <Text style={styles.cell}>{item.amountPaid}</Text>
+                    <Text style={styles.cell}>{item.taxableValue}</Text>
+                    <Text style={styles.cell}>{item.discount}</Text>
+                    <Text style={styles.cell}>{item.sindhTax}</Text>
+                    <Text style={styles.cell}>{item.punjabTax}</Text>
+                    <Text style={styles.cell}>{item.kpkTax}</Text>
+                    <Text style={styles.cell}>{item.balochistanTax}</Text>
+                    <Text style={styles.cell}>{item.withholdingTax}</Text>
+                    <Text style={styles.cell}>{item.incomeTax}</Text>
+                    <Text style={styles.cell}>{item.bankAccount}</Text>
+                  </View>
+                )}
+                showsVerticalScrollIndicator={true}
+              />
+            )}
+          </View>
+        </ScrollView>
+      </View>
     </ScrollView>
   );
 }
@@ -77,51 +80,81 @@ const styles = StyleSheet.create({
     padding: 16,
     backgroundColor: "#fff",
   },
-  filters: {
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    marginBottom: 16,
-    gap: 8,
-  },
-  filterButton: {
-    backgroundColor: "#f3f4f6",
-    padding: 8,
-    borderRadius: 6,
-  },
   exportButton: {
-    alignSelf: "flex-start",
-    backgroundColor: "#2563eb",
-    padding: 8,
-    borderRadius: 6,
-    marginBottom: 12,
+    backgroundColor: '#28a745',
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'flex-end',
+    marginTop: 0,
+    marginBottom: 16,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
   exportText: {
-    color: "#fff",
-    fontWeight: "600",
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+    letterSpacing: 0.5,
+  },
+  tableContainer: {
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    marginBottom: 24,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.08,
+    shadowRadius: 4,
+    elevation: 2,
+    borderWidth: 1,
+    borderColor: '#dee2e6',
   },
   tableHeader: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    backgroundColor: "#f3f4f6",
-    padding: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#f8f9fa',
+    paddingVertical: 18,
+    paddingHorizontal: 12,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#dee2e6',
+  },
+  rowEven: {
+    backgroundColor: '#f8f9fa',
+  },
+  rowOdd: {
+    backgroundColor: '#fff',
   },
   headerCell: {
-    width: Dimensions.get("window").width / 2.3,
-    fontWeight: "bold",
-    fontSize: 12,
-    marginBottom: 8,
+    minWidth: 140,
+    fontWeight: 'bold',
+    fontSize: 15,
+    color: '#343a40',
+    textAlign: 'center',
+    letterSpacing: 0.2,
+    paddingHorizontal: 8,
   },
   tableRow: {
-    flexDirection: "row",
-    flexWrap: "wrap",
+    flexDirection: 'row',
+    backgroundColor: '#fff',
     borderBottomWidth: 1,
-    borderColor: "#e5e7eb",
-    paddingVertical: 8,
+    borderColor: '#f1f3f4',
+    paddingVertical: 14,
+    paddingHorizontal: 12,
   },
   cell: {
-    width: Dimensions.get("window").width / 2.3,
-    fontSize: 12,
-    marginBottom: 8,
+    minWidth: 140,
+    fontSize: 14,
+    color: '#495057',
+    textAlign: 'center',
+    paddingVertical: 2,
+    paddingHorizontal: 8,
   },
   noDataBox: {
     padding: 20,

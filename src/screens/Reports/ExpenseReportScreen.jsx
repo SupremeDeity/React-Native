@@ -355,11 +355,13 @@ const styles = StyleSheet.create({
     color: '#333',
   },
   filterContainer: {
+    alignContent: 'center',
+    alignItems: 'center',
+    marginVertical: "auto",
     flexDirection: 'row',
     marginBottom: 16,
     backgroundColor: '#fff',
     borderRadius: 8,
-    padding: 4,
   },
   filterButton: {
     flex: 1,
@@ -372,7 +374,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#007bff',
   },
   filterText: {
-    fontSize: 14,
+    fontSize: 12,
     color: '#666',
     fontWeight: '500',
   },
@@ -420,6 +422,7 @@ const styles = StyleSheet.create({
   },
   tableCell: {
     minWidth: 120,
+    maxWidth: 120,
     fontSize: 12,
     color: '#495057',
     textAlign: 'center',
