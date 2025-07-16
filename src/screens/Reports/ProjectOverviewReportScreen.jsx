@@ -430,6 +430,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   tabContainer: {
+    fontSize: 14,
     flexDirection: 'row',
     backgroundColor: '#fff',
     borderRadius: 8,
@@ -446,7 +447,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#007bff',
   },
   tabText: {
-    fontSize: 14,
+    marginVertical: "auto",
+    textAlign: 'center',
+    fontSize: 12,
     color: '#666',
     fontWeight: '500',
   },
@@ -573,7 +576,6 @@ const styles = StyleSheet.create({
   tableContainer: {
     backgroundColor: '#fff',
     borderRadius: 8,
-    padding: 16,
     marginBottom: 16,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
@@ -584,7 +586,7 @@ const styles = StyleSheet.create({
   tableTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginBottom: 12,
+    padding: 16,
     color: '#333',
   },
   tableHeader: {
