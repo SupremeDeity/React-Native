@@ -14,11 +14,6 @@ const salesData = []; // Empty for now, can be populated with mock entries
 export default function SalesReportScreen() {
   return (
     <ScrollView style={styles.container}>
-      <View style={styles.filters}>
-        <TouchableOpacity style={styles.filterButton}><Text>Duration</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.filterButton}><Text>Client</Text></TouchableOpacity>
-      </View>
-
       <TouchableOpacity style={styles.exportButton}>
         <Text style={styles.exportText}>Export</Text>
       </TouchableOpacity>

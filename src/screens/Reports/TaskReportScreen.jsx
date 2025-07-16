@@ -20,7 +20,7 @@ const taskData = [
     task: 'Task 2',
     project: 'Infra Security Upgrade',
     dueDate: '21-08-2025',
-    assignedTo: ['https://via.placeholder.com/30'],
+    assignedTo: ['https://i.pravatar.cc/30'],
     status: 'Doing',
   },
   {
@@ -28,10 +28,9 @@ const taskData = [
     task: 'Task 1',
     project: 'Infra Security Upgrade',
     dueDate: '27-08-2025',
-    assignedTo: ['https://via.placeholder.com/30'],
+    assignedTo: ['https://i.pravatar.cc/30'],
     status: 'To Do',
   },
-  // Add more tasks as needed
 ];
 
 const statusColors = {
@@ -51,12 +50,6 @@ export default function TaskReportScreen() {
 
   return (
     <ScrollView style={styles.container}>
-      <View style={styles.filters}>
-        <TouchableOpacity style={styles.filterButton}><Text>Duration</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.filterButton}><Text>Status</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.filterButton}><Text>Project</Text></TouchableOpacity>
-      </View>
-
       <View style={styles.chartContainer}>
         <PieChart
           data={pieData}

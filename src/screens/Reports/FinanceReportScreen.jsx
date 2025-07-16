@@ -43,7 +43,8 @@ export default function FinanceReportScreen() {
           <Text style={styles.tableCol}>Paid On</Text>
           <Text style={styles.tableCol}>Status</Text>
         </View>
-
+        
+        {/* Add whatever table is needed here */}
         <Text style={styles.noTableData}>No data available in table</Text>
 
         {/* Footer */}

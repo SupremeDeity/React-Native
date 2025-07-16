@@ -31,12 +31,6 @@ const timeLogData = [
 export default function TimeLogReportScreen() {
   return (
     <ScrollView style={styles.container}>
-      <View style={styles.filters}>
-        <TouchableOpacity style={styles.filterButton}><Text>Duration</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.filterButton}><Text>Employee</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.filterButton}><Text>Project</Text></TouchableOpacity>
-      </View>
-
       <TouchableOpacity style={styles.exportButton}>
         <Text style={styles.exportText}>Export</Text>
       </TouchableOpacity>
